@@ -1,0 +1,35 @@
+// Em prisma/schema.prisma
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // Pega a URL do banco de dados de um arquivo .env
+}
+
+// Definição do seu modelo de personagem
+// Nota: O Prisma não suporta objetos aninhados diretamente como no JSON.
+// Usamos o tipo `Json` para armazenar estruturas complexas.
+model Character {
+  id              String    @id @default(uuid())
+  personalDetails Json
+  imageSet        Json
+  background      Json
+  archetype       String
+  stats           Json
+  movement        Int
+  size            Int
+  combat          Json[] // Lista de objetos JSON
+  rituals         Json[]
+  inventory       Json[]
+  attributePoints Int
+  skillPoints     Int
+  maskForm        String? // O '?' torna o campo opcional
+  money           Float
+
+  // Campos para controle
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

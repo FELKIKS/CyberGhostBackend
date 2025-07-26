@@ -1,0 +1,6 @@
+{
+  "name": "SQL CyberGhost //ARSENAL.LOG",
+  "description": "Uma ficha de perfil de operativo interativa para o RPG CyberGhost. Gerencie detalhes do personagem, atributos, perícias, combate e um sistema de inventário em grade. Inclui um rolador de dados integrado e um painel de controle do mestre.",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
